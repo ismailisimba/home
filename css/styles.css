@@ -591,7 +591,8 @@ ul.navigation li:hover ul.dropdown {
   opacity: .4;
   display: block;
   color: #555;
-  font-size: 36px;
+  font-size: 24px;
+  margin-bottom: 12px;
   font-weight: 300;
   text-decoration: none;
   -webkit-transition: all .3s;
