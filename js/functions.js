@@ -85,6 +85,7 @@
     }, 250);
   });
 
+  
   $(window).on('resize', function(){
     // Change Masonry on resize
     setTimeout(function(){

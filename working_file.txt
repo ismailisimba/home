@@ -1,9 +1,10 @@
-Animations --Sika Women's Day
-Authoring and Copywriting --Mysteries of the Pizza
-Backend Development --TALISS Backend on Google's Apps Script
-Design and Print --Soul Nourishment, Daily Devotion
-Digital Community Building and Management --IST Alumni
-Events and Coverage --ISSEA Band & Choir
-Translations --Translators Without Borders
-UI and Front End Development --IST Homepage
-Web, Analytics, and SEO --
+typography
+design
+backweb
+frontweb
+analysis
+translations
+events
+digicom
+
+https://sites.google.com/istafrica.com/twigabandchoir/schedule?authuser=0
