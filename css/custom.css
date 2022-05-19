@@ -24,4 +24,18 @@
     flex-flow: row !important;
     justify-content: center !important;
     align-items: center !important;
+    text-align: center;
 }
+
+.half-width{
+    width: 69%;
+}
+
+
+
+
+@media screen and (min-width: 600px) {
+    .half-width {
+      width:50% !important;
+    }
+  }
