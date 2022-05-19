@@ -17,3 +17,11 @@
     - Themanoid
 
 ----------------------------*/
+
+
+.centered-row{
+    display: flex !important;
+    flex-flow: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
