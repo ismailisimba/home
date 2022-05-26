@@ -9,8 +9,7 @@ digicom
 
 https://sites.google.com/istafrica.com/twigabandchoir/schedule?authuser=0
 https://www.zoomtanzania.com/blog/sw/elektroniki-za-gemu-za-video/
-https://www.linkedin.com/pulse/laptop-shopping-101-ismaili-simba/
-https://www.linkedin.com/pulse/guide-social-media-management-marketing-ismaili-simba/
+
 https://dev.to/ismailisimba/making-horizontal-mouse-scrolling-with-html-css-and-javascript-3n2i
 https://dev.to/ismailisimba/how-to-rename-a-bunch-of-files-in-google-drive-using-google-sheets-and-apps-script-1ed5
 https://dev.to/ismailisimba/deploying-pure-javascript-full-stack-web-apps-for-free-using-google-console-optional-and-apps-script-7di
