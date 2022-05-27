@@ -14,8 +14,9 @@ https://www.zoomtanzania.com/blog/sw/elektroniki-za-gemu-za-video/
 
 
 Alliance Investment Calculator - https://github.com/ismailisimba/calculatorThree/blob/master/script.js
+Proprietary Financial Calculator On Apps Script and Google Sheets
+
 Captcha Engine
-Ladhaafrica -- Vanilla JavaScript Backend On Apps Script, Google Sheets, and Google Drive
 
 
 
