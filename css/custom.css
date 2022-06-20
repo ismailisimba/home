@@ -31,11 +31,30 @@
     width: 69%;
 }
 
+.frontendshowcase1{
+    background-image: url("../images/portfolio/isthomepage.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    min-height: 2696px;
+    height: auto;
+    padding-top:41.463%;
+}
+
 
 
 
 @media screen and (min-width: 600px) {
     .half-width {
       width:50% !important;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .frontendshowcase1{
+        background-image: url("../images/portfolio/ismailisimba_mob.webp");
+        min-height: 5000px;
     }
   }
