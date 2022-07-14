@@ -64,6 +64,16 @@
     padding-top:41.463%;
 }
 
+.frontendshowcase23{
+    background-image: url("../images/portfolio/nessaweb.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    min-height: 3420px;
+    height: auto;
+    padding-top:41.463%;
+}
 
 
 @media screen and (min-width: 600px) {
@@ -85,5 +95,9 @@
     .frontendshowcase22{
         background-image: url("../images/portfolio/ist_bus_detailed_mob.webp");
         min-height: 3000px;
+    }
+    .frontendshowcase23{
+        background-image: url("../images/portfolio/nessamob.webp");
+        min-height: 3642px;
     }
   }
