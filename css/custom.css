@@ -83,6 +83,20 @@
   }
 
   @media screen and (max-width: 600px) {
+    .custom_mob1{
+        display: none;
+    }
+
+    .mobfullwidth{
+        width: 100% !important;
+    }
+
+    .custom_mob2{
+        display: flex !important;
+        flex-flow: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
 
     .frontendshowcase1{
         background-image: url("../images/portfolio/ismailisimba_mob.webp");
