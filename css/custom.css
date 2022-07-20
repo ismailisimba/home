@@ -75,6 +75,13 @@
     padding-top:41.463%;
 }
 
+.momwcenter{
+    display: flex !important;
+    flex-flow: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
 
 @media screen and (min-width: 600px) {
     .half-width {
