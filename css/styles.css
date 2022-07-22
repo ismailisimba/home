@@ -31,7 +31,7 @@
   01. Header
 */
 header {
-  padding: 45px 0;
+  padding: 0px 0px;
   position: relative;
   z-index: 4;
 }
@@ -91,7 +91,7 @@ header .ion-ios-search-strong {
   font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Merriweather", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .search .form-control:focus {
@@ -141,7 +141,7 @@ ul.navigation li a {
   padding: 15px 0;
   margin: 0 13px;
   color: #000;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Merriweather", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 14px;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -322,7 +322,7 @@ ul.navigation li:hover ul.dropdown {
   03. Hero
 */
 .hero {
-  padding: 100px 0 100px;
+  padding: 0 0 100px;
   position: relative;
   z-index: 2;
 }
@@ -395,7 +395,7 @@ ul.navigation li:hover ul.dropdown {
 }
 
 .grid.masonry .item .caption .tag {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Merriweather", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 13px;
 }
 
@@ -437,6 +437,10 @@ ul.navigation li:hover ul.dropdown {
   padding-bottom: 50px;
   text-decoration: none;
   overflow: hidden;
+
+ /* border: .69px solid black;
+  //border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;*/
 }
 
 @media screen and (max-width: 992px) {
@@ -495,7 +499,7 @@ ul.navigation li:hover ul.dropdown {
 .grid.classic .item .caption .tag {
   color: #555;
   font-weight: 300;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Merriweather", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 13px;
 }
 
@@ -793,7 +797,7 @@ aside:before {
 }
 
 .comments .comment .details .date {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Merriweather", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 12px;
 }
 
@@ -823,7 +827,7 @@ aside:before {
 .btn {
   border-radius: 0;
   border: 0;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Merriweather", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 13px;
 }
 
@@ -911,7 +915,7 @@ footer.bottom a {
   color: #555;
   font-weight: 400;
   margin-bottom: 10px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Merriweather", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 13px;
 }
 
@@ -964,7 +968,7 @@ footer.bottom a {
   font-weight: 400;
   font-size: 1em;
   margin: 0 2px 0 0;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Merriweather", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 12px;
 }
 
@@ -1018,7 +1022,7 @@ ul.item-list li a, ul.item-list li span {
   text-decoration: none;
   -webkit-transition: all .3s;
   transition: all .3s;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Merriweather", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 400;
 }

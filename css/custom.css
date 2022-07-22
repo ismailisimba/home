@@ -18,6 +18,12 @@
 
 ----------------------------*/
 
+.title1{
+    font-family: "Fuzzy Bubbles","Times New Roman" !important;
+    font-weight: 600 !important;
+    font-size: 169px !important;
+    margin-bottom: 0px !important;
+}
 
 .centered-row{
     display: flex !important;
