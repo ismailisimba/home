@@ -1,11 +1,12 @@
-typography
-design
-backweb
-frontweb
-analysis
-translations
-events
-digicom
+Animations 					- anime
+Authoring and Copywriting 			- typography
+Design and Print 				- design
+Backend Development 				- backweb
+UI and Frontend Development 			- frontweb
+Web, Analytics, and SEO 			- analysis
+Translations 					- translations
+Events Coverage 				- events
+Digital Community Building and Management 	- digicom
 
 https://sites.google.com/istafrica.com/twigabandchoir/schedule?authuser=0
 
