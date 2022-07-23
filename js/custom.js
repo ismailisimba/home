@@ -1,7 +1,10 @@
-import titleanimation from "./titleanimation.js";
 
-import("./js/titleanimation.js");
-window.onload = ()=>{
-
-console.log(titleanimation);
-}
+(async () => {
+    
+      const anime = await import("/githome/js/titleanimation.js");
+    
+    return anime;
+  })().then((anime)=>{
+    const animate = new anime.titleanimation();
+    animate.start();
+  });
