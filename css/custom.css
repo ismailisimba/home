@@ -23,6 +23,9 @@
     font-weight: 600 !important;
     font-size: 69px !important;
     margin-bottom: 0px !important;
+    position: relative !important;
+    width: 150%;
+    left: -25%;
 }
 .title1 span{
 transition:all .69s ease-out;
@@ -99,6 +102,17 @@ transition:all .69s ease-out;
   }
 
   @media screen and (max-width: 600px) {
+
+    .title1{
+        font-size: 42px !important;
+        margin-bottom: 0px !important;
+        position: relative !important;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
     .custom_mob1{
         display: none;
     }

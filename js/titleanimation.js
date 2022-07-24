@@ -9,23 +9,29 @@ class titleanimation {
         this.counter2 = {"zero":["u","dhu","i"],"one":["di","gi","ta","li"],"num":0};
         this.title1 =  document.getElementsByClassName("title1")[0];
         this.doTitleAnimation = this.doTitleAnimation;
+        this.pauseForTheseSeconds = this.pauseForTheseSeconds;
+        this.interval2 = this.interval2;
     
         
     }
 
-    interval1 = 696;
+    interval1 = 36;
+    interval2 = 0;
 
     
 
     start () {
         
-        setInterval(()=>{this.doTitleAnimation(this.interval1,this.counter1)},this.interval1);
+        this.interval2 = setInterval(()=>{this.doTitleAnimation(this.interval1,this.counter1)},this.interval1);
         
     }
 
     doTitleAnimation (){
         const span = document.createElement("span");
         const span2 = document.createElement("span");
+
+        span.style.fontWeight = "300";
+        span2.style.fontWeight = "500";
        
         if(this.counter1==0&&this.counter2.num>=0){
             if(this.counter2.num>2){
@@ -38,6 +44,8 @@ class titleanimation {
             document.getElementById("ki").appendChild(span2);   
             if(this.counter2.num>=3){
                 this.counter1 = 1;
+                document.getElementById("spacespan1").innerHTML = " ";
+                this.pauseForTheseSeconds(269);
             }else{
                 this.counter2.num++;
             }
@@ -49,11 +57,22 @@ class titleanimation {
             document.getElementById("ki").querySelectorAll("span")[this.counter2.num+1].remove();
             if(this.counter2.num==0){
                 this.counter1 = 0;
+                document.getElementById("spacespan1").innerHTML = "";
+                this.pauseForTheseSeconds(3069);
             }else{
                 this.counter2.num--;
             }
 
         }
+    }
+
+
+    pauseForTheseSeconds (seconds){
+        window.clearInterval(this.interval2);
+        const thisTimeout = window.setTimeout(()=>{
+            this.start();
+            window.clearTimeout(thisTimeout);
+        },seconds)
     }
 
 }
