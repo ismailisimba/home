@@ -24,6 +24,9 @@
     font-size: 69px !important;
     margin-bottom: 0px !important;
 }
+.title1 span{
+transition:all .69s ease-out;
+}
 
 .centered-row{
     display: flex !important;
