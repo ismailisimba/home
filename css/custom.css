@@ -94,6 +94,16 @@ transition:all .69s ease-out;
     align-items: center !important;
 }
 
+.navia:active, .navia:hover{
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  border-radius: 9px;
+}
+
+ul.navigation li a {
+    padding: 12px 16px !important;
+}
+
 
 @media screen and (min-width: 600px) {
     .half-width {
