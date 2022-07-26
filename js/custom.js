@@ -1,4 +1,4 @@
-const string1 = window.location.hostname.includes("ismailisimba.github.io") ? "" : "/githome";
+const string1 = window.location.hostname.includes("ismailisimba.github.io") ? "/home" : "/githome";
 (async () => {
       
     
