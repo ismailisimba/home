@@ -45,7 +45,7 @@ class titleanimation {
             if(this.counter2.num>=3){
                 this.counter1 = 1;
                 document.getElementById("spacespan1").innerHTML = " ";
-                this.pauseForTheseSeconds(269);
+                this.pauseForTheseSeconds(1669);
             }else{
                 this.counter2.num++;
             }
@@ -58,7 +58,7 @@ class titleanimation {
             if(this.counter2.num==0){
                 this.counter1 = 0;
                 document.getElementById("spacespan1").innerHTML = "";
-                this.pauseForTheseSeconds(3069);
+                this.pauseForTheseSeconds(2069);
             }else{
                 this.counter2.num--;
             }

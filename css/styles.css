@@ -125,7 +125,7 @@ ul.navigation {
   margin: 0;
   font-size: 17px;
   font-weight: 300;
-  position: relative;
+  position: fixed;
   z-index: 100;
 }
 
@@ -138,7 +138,8 @@ ul.navigation li {
 
 ul.navigation li a {
   display: block;
-  padding: 15px 0;
+  /*padding: 15px 0;*/
+  padding: 12px 16px;
   margin: 0 13px;
   color: #000;
   font-family: "Merriweather", "Helvetica Neue", Helvetica, sans-serif;

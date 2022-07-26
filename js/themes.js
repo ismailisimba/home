@@ -27,17 +27,18 @@ class themes {
             const newColorScheme = event.matches ? "dark" : "light";
             this.applyThisTheme(newColorScheme);
         });
-        this.applyThisTheme("dark")
+        this.applyThisTheme(this.currentTheme)
         
     }
 
     applyThisTheme(theme){
         if(theme==="light"){
 
-            const batch1 = document.querySelectorAll(".navigation, .title1, h4, .social-links"); //#000
+            const batch1 = document.querySelectorAll(".navigation, .navia, .title1, h4, .social-links"); //#000
             const batch2 = document.querySelectorAll(".title1 p, .tag, .footertop");//#555555
             const footer = document.querySelectorAll("footer")[0].style.background = "#f5f5f5";
-            const body = document.querySelectorAll("body")[0].style.background = "#fff";
+            const body = document.querySelectorAll("body, .navigation").forEach(ele=>ele.style.background ="#ffffff");
+            
 
             batch1.forEach(ele=>{ele.style.color = "#000000";});
             batch2.forEach(ele=>{ele.style.color = "#555555";});
@@ -48,7 +49,8 @@ class themes {
             const batch1 = document.querySelectorAll(".navia, .title1, h4, .social-links"); //#000
             const batch2 = document.querySelectorAll(".title1, .title1p, .tag");//#555555
             const footer = document.querySelectorAll("footer, footer .bottom").forEach(ele=>{ele.style.background = "#a2a9ad";});
-            const body = document.querySelectorAll("body")[0].style.background = "#000000";
+            const body = document.querySelectorAll("body, .navigation").forEach(ele=>ele.style.background ="#000000");
+            const body2 = document.querySelectorAll(".bar ").forEach(ele=>ele.style.background ="#ffffff");
 
             const blackbatch = document.querySelectorAll(".footertop div p").forEach(ele=>ele.style.color="#000000");
 

@@ -1,7 +1,9 @@
+const string1 = window.location.hostname.includes("ismailisimba.github.io") ? "" : "/githome";
 (async () => {
+      
     
-      const anime = await import("/githome/js/titleanimation.js");
-      const theme = await import("/githome/js/themes.js");
+      const anime = await import(string1+"/js/titleanimation.js");
+      const theme = await import(string1+"/js/themes.js");
       //const server = await import("/githome/js/server.js");
     
     return {anime,theme};
@@ -10,6 +12,6 @@
     const animate = new anime.titleanimation();
     animate.start();
     //console.log(themes.currentTheme);
-    themes.addThemes();
+    //themes.addThemes();
   });
 
