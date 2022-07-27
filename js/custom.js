@@ -11,7 +11,6 @@ const string1 = window.location.hostname.includes("ismailisimba.github.io") ? "/
     const themes = new theme.themes();
     const animate = new anime.titleanimation();
     animate.start();
-    //console.log(themes.currentTheme);
-    //themes.addThemes();
+    
   });
 
