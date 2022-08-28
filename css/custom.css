@@ -17,6 +17,9 @@
     - Themanoid
 
 ----------------------------*/
+.container-fluid{
+    background-color: #5FE8B4;
+}
 
 .title1{
     font-family: "Fuzzy Bubbles","Times New Roman" !important;
@@ -27,10 +30,16 @@
     width: 150%;
     left: -25%;
 }
-.title1 span{
+.title1 span, p{
 transition:all .69s ease-out;
+color: #0B6342 !important;
+box-sizing: border-box;
+background-color: #5FE8B4;
 }
-
+.btn.btn-default, .btn.btn-color {
+    background: #0B6342;
+    color: #fff;
+}
 .centered-row{
     display: flex !important;
     flex-flow: row !important;
@@ -95,9 +104,12 @@ transition:all .69s ease-out;
 }
 
 .navia:active, .navia:hover{
-  color: #000000 !important;
-  background-color: #ffffff !important;
+  color: #0B6342 !important;
+  background-color: #19E396 !important;
   border-radius: 9px;
+}
+.navia:hover{
+    background-color: #14B376 !important;
 }
 
 ul.navigation li a {
@@ -109,9 +121,98 @@ ul.navigation li a {
     justify-content: space-around;
     align-items: center;
     margin-top: 36px;
-    background-color: #000000;
+    background-color: #5FE8B4;
+}
+.momofall{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 24px 36px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: transparent;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+
 }
 
+.grid-container .col-md-12, footer, footer .col-md-3, footer .footertop,footer .container{
+    z-index: 2 !important;
+}
+
+.framesmom{
+    position: absolute;
+    width: 169px;
+    height: 99px;
+    box-sizing: border-box;
+    background-color: #5FE8B4;
+    transform: rotate(320deg);
+    top: 30px;
+    left: 30px;
+}
+.frame:first-child{
+    position: relative;
+    left: 0px;
+    top: 169px;
+    width: 169px;
+    height: 169px;
+    background-color: #5FE8B4;
+    z-index: 0;
+    transition: all .34s ease-in;
+    /* @keyframes duration | easing-function | delay |
+iteration-count | direction | fill-mode | play-state | name */
+    
+
+}
+
+@keyframes paint {
+    0%{
+        transform:translate(0,0px);
+    }
+    16%{
+        transform:translate(0,0px);
+    }
+    31%{
+     transform:translate(0,-169px);   
+    }
+    100%{
+        transform:translate(200px,-169px);   
+    }
+}
+.frame:last-child{
+    position: relative;
+    left: 200px;
+    top: -169px;
+    width: 169px;
+    height: 169px;
+    color: #5FE8B4;
+    background-color: #5FE8B4;
+    z-index: 1;
+}
+.framesmom img{
+   /* animation: 3s ease-in-out 1s infinite paint;*/
+    width: 69px !important;
+    position: absolute;
+    top:-169px;
+    height: max-content !important;
+    transition: all 1s ease-in;
+}
+
+.frame .cover{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color:#5FE8B4;
+    z-index: 1;
+}
 
 @media screen and (min-width: 600px) {
     .half-width {
@@ -120,6 +221,14 @@ ul.navigation li a {
   }
 
   @media screen and (max-width: 600px) {
+
+    .framesmom{
+        top: -69px;
+        left: 0px;
+    }
+    .navmom{
+        background-color: transparent;
+    }
 
     .title1{
         font-size: 42px !important;
