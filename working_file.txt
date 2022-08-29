@@ -14,6 +14,12 @@ https://kiswahiliprize.cornell.edu/
 https://sharedvn.net/leech
 https://www.zoomtanzania.com/blog/sw/elektroniki-za-gemu-za-video/
 
+************************
+https://api.artic.edu/docs/
+https://www.artic.edu/iiif/2/2d484387-2509-5e8e-2c43-22f9981972eb/full/843,/0/default.jpg
+https://api.artic.edu/api/v1/artworks/27999?fields=id,title,image_id
+************************
+
 
 
 
