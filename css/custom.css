@@ -17,8 +17,11 @@
     - Themanoid
 
 ----------------------------*/
-.container-fluid{
+body{
     background-color: #5FE8B4;
+}
+.dropdown a{
+    text-decoration: none !important;
 }
 
 .title1{
@@ -30,7 +33,7 @@
     width: 150%;
     left: -25%;
 }
-.title1 span, p{
+.title1 span, .hero p{
 transition:all .69s ease-out;
 color: #0B6342 !important;
 box-sizing: border-box;
@@ -104,7 +107,7 @@ background-color: #5FE8B4;
 }
 
 .navia:active, .navia:hover{
-  color: #0B6342 !important;
+  color: white !important;
   background-color: #19E396 !important;
   border-radius: 9px;
 }
@@ -170,6 +173,53 @@ iteration-count | direction | fill-mode | play-state | name */
 
 }
 
+a.naviatheme,.opt1,.opt2{
+    display: flex !important;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.opt1,.opt2{
+    box-sizing: border-box;
+    padding: 1.69px 3px;
+}
+
+.opt1:hover,.opt2:hover{
+    background-color: #0B6342;
+}
+
+.navoptions{
+    background-color: transparent;
+    border-left: .69px dotted #0B6342;
+    width: 59%;
+    box-sizing: border-box;
+    font-size: 10px;
+    text-transform: lowercase;
+    font-weight: 700;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.opt1 img{
+    background-color: transparent;
+    background-image: url("../images/icons/darkmode.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 12px;
+}
+.opt2 img{
+    background-color: transparent;
+    background-image: url("../images/icons/lightmode.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 12px;
+}
 @keyframes paint {
     0%{
         transform:translate(0,0px);

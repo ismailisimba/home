@@ -9,6 +9,9 @@ const string1 = window.location.hostname.includes("ismailisimba.github.io") ? "/
     return {anime,theme};
   })().then(({anime,theme})=>{
     const themes = new theme.themes();
+    document.querySelectorAll(".themeop").forEach(e=>{
+      e.addEventListener("click",themes.addThemes);
+    })
     const animate = new anime.titleanimation();
     animate.start();
     

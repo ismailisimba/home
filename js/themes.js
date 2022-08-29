@@ -8,14 +8,17 @@ const srcArr = [
     "./images/makicons/6.webp",
 ];
 
+var currentTheme = "dark";
+
 class themes {
 
 
     constructor(){
      this.addThemes = this.addThemes;
-     this.applyThisTheme = this.applyThisTheme;
+     this.applyThisTheme = applyThisTheme;
      this.applyMakIcons = this.applyMakIcons;
      this.makIconAnime = 0;
+     this.currentTheme = currentTheme;
 
 
 
@@ -33,46 +36,22 @@ class themes {
 
   
 
-    addThemes (){
-        
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            const newColorScheme = event.matches ? "dark" : "light";
-            this.applyThisTheme("light");
-        });
-        this.applyThisTheme(this.currentTheme)
-        
-    }
-
-    applyThisTheme(theme){
-        if(theme==="light"){
-
-            const batch1 = document.querySelectorAll(".navigation, .navia, .title1, h4, .social-links, .filtera"); //#000
-            const batch2 = document.querySelectorAll(".title1 p, .tag, .footertop");//#555555
-            const footer = document.querySelectorAll("footer")[0].style.background = "#f5f5f5";
-            const body = document.querySelectorAll("body, .navigation").forEach(ele=>ele.style.background ="#19E396");
-            
-
-            batch1.forEach(ele=>{ele.style.color = "#000000";});
-            batch2.forEach(ele=>{ele.style.color = "#0B6342";});
-            document.styleSheets[2].insertRule('.l3:before { border-left: 1px solid black !important; }', 0);
-            document.querySelectorAll(".brand")[0].querySelectorAll("img")[0].src ="./images/logotoo.png";
-
-            
-
-        }else{
-            const batch1 = document.querySelectorAll(".navia, .title1, h4, .social-links, .filtera"); //#000
-            const batch2 = document.querySelectorAll(".title1, .title1p, .tag");//#555555
-            const footer = document.querySelectorAll("footer, footer .bottom").forEach(ele=>{ele.style.background = "#a2a9ad";});
-            const body = document.querySelectorAll("body, .navigation").forEach(ele=>ele.style.background ="#000000");
-            const body2 = document.querySelectorAll(".bar ").forEach(ele=>ele.style.background ="#ffffff");
-
-            const blackbatch = document.querySelectorAll(".footertop div p").forEach(ele=>ele.style.color="#000000");
-
-            batch1.forEach(ele=>{ele.style.color = "#ffffff";});
-            batch2.forEach(ele=>{ele.style.color = "#a2a9ad";});
-            document.styleSheets[2].insertRule('.l3:before { border-left: 1px solid white !important; }', 0);
-            document.querySelectorAll(".brand")[0].querySelectorAll("img")[0].src ="./images/logo.png";
-        }
+    async addThemes (e){
+        e.stopPropagation();
+        e.preventDefault();
+        const lePath = await (async()=>{
+            return e.composedPath();
+        })().then(async(l)=>{
+            l.forEach(el=>{
+                if(el.nodeType===9||el.nodeType===undefined){}else{
+                    if(el.classList.contains("themeop")){
+                        applyThisTheme(el.classList[0]==="opt1"?"dark":"light");
+                    }
+                } 
+            })
+            return l;
+        })
+        this.currentTheme = "dark";  
     }
 
     applyMakIcons (){
@@ -150,7 +129,6 @@ class themes {
             theWidth = 187;
             theHeight = theHeight + 269;
         }
-        console.log({width,height,columns})
     }
 
 
@@ -163,3 +141,44 @@ const pauseForTheseSeconds = async(seconds=100,action=()=>{})=>{
         window.clearTimeout(thisTimeout);
     },seconds)
   }
+
+
+const applyThisTheme= (theme)=>{
+    if(theme==="light"){
+
+        const batch1 = document.querySelectorAll(".navigation, .navia, .title1, h4, .social-links, .filtera"); //#000
+        const batch2 = document.querySelectorAll(".title1 p, .tag, .footertop");//#555555
+        const footer = document.querySelectorAll("footer, footer .bottom").forEach(ele=>{ele.style.background = "#f5f5f5";});
+        const body = document.querySelectorAll("body, .navigation").forEach(ele=>ele.style.background ="#5FE8B4");
+        
+
+        batch1.forEach(ele=>{ele.style.color = "#000000";});
+        batch2.forEach(ele=>{ele.style.color = "#0B6342";});
+        document.styleSheets[2].insertRule('.l3:before { border-left: 1px solid black !important; }', 0);
+        document.querySelectorAll(".brand")[0].querySelectorAll("img")[0].src ="./images/logotoo.png";
+        currentTheme = "light";
+        document.querySelectorAll(".themeop").forEach(e=>e.style.border = "none");
+        document.querySelectorAll(".opt2")[0].style.border = ".69px dotted #0B6342";
+        console.log(currentTheme);
+
+        
+
+    }else{
+        const batch1 = document.querySelectorAll(".navia, .title1, h4, .social-links, .filtera"); //#000
+        const batch2 = document.querySelectorAll(".title1, .title1p, .tag");//#555555
+        const footer = document.querySelectorAll("footer, footer .bottom").forEach(ele=>{ele.style.background = "#a2a9ad";});
+        const body = document.querySelectorAll("body, .navigation").forEach(ele=>ele.style.background ="#0B6342");
+        const body2 = document.querySelectorAll(".bar ").forEach(ele=>ele.style.background ="#ffffff");
+
+        const blackbatch = document.querySelectorAll(".footertop div p").forEach(ele=>ele.style.color="#000000");
+
+        batch1.forEach(ele=>{ele.style.color = "#ffffff";});
+        batch2.forEach(ele=>{ele.style.color = "#a2a9ad";});
+        document.styleSheets[2].insertRule('.l3:before { border-left: 1px solid white !important; }', 0);
+        document.querySelectorAll(".brand")[0].querySelectorAll("img")[0].src ="./images/logo.png";
+        currentTheme = "dark";
+        document.querySelectorAll(".themeop").forEach(e=>e.style.border = "none");
+        document.querySelectorAll(".opt1")[0].style.border = ".69px dotted #0B6342";
+        console.log(currentTheme);
+    }
+}
