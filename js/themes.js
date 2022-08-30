@@ -23,8 +23,8 @@ class themes {
 
 
      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        this.currentTheme = "light"; 
-        this.applyThisTheme("light");
+        this.currentTheme = "dark"; 
+        this.applyThisTheme("dark");
      }else{
         this.currentTheme = "light";
         this.applyThisTheme("light");
@@ -97,7 +97,7 @@ class themes {
                     counter = 0;
             }
         },time);
-        this.dupliMakiCons();
+        //this.dupliMakiCons();
         this.makIconAnime = makIconAnime;
     }
 
@@ -145,16 +145,30 @@ const pauseForTheseSeconds = async(seconds=100,action=()=>{})=>{
 
 const applyThisTheme= (theme)=>{
     if(theme==="light"){
-
-        const batch1 = document.querySelectorAll(".navigation, .navia, .title1, h4, .social-links, .filtera"); //#000
-        const batch2 = document.querySelectorAll(".title1 p, .tag, .footertop");//#555555
-        const footer = document.querySelectorAll("footer, footer .bottom").forEach(ele=>{ele.style.background = "#f5f5f5";});
-        const body = document.querySelectorAll("body, .navigation").forEach(ele=>ele.style.background ="#5FE8B4");
-        
-
-        batch1.forEach(ele=>{ele.style.color = "#000000";});
-        batch2.forEach(ele=>{ele.style.color = "#0B6342";});
-        document.styleSheets[2].insertRule('.l3:before { border-left: 1px solid black !important; }', 0);
+        //dark green back to light green
+        document.querySelectorAll("body").forEach(ele=>{
+            if(ele.nodeType){
+                ele.style.background = "#5FE8B4";
+            }
+        })
+        //vice versa
+        document.querySelectorAll(".makitit,.hero p, div.caption h4,div.tag,.filter-container ul.filters li a.filter").forEach(ele=>{
+            if(ele.nodeType){
+                ele.style.color = "#0B6342";
+            }
+        })
+        //whitetoblack
+        document.querySelectorAll(".footertop p,.social-links li a").forEach(ele=>{
+            if(ele.nodeType){
+                ele.style.color = "#000000";
+            }
+        })
+        document.querySelectorAll("footer").forEach(ele=>{
+            if(ele.nodeType){
+                ele.style.background = "#f5f5f5";
+            }
+        })
+     
         document.querySelectorAll(".brand")[0].querySelectorAll("img")[0].src ="./images/logotoo.png";
         currentTheme = "light";
         document.querySelectorAll(".themeop").forEach(e=>e.style.border = "none");
@@ -164,17 +178,29 @@ const applyThisTheme= (theme)=>{
         
 
     }else{
-        const batch1 = document.querySelectorAll(".navia, .title1, h4, .social-links, .filtera"); //#000
-        const batch2 = document.querySelectorAll(".title1, .title1p, .tag");//#555555
-        const footer = document.querySelectorAll("footer, footer .bottom").forEach(ele=>{ele.style.background = "#a2a9ad";});
-        const body = document.querySelectorAll("body, .navigation").forEach(ele=>ele.style.background ="#0B6342");
-        const body2 = document.querySelectorAll(".bar ").forEach(ele=>ele.style.background ="#ffffff");
-
-        const blackbatch = document.querySelectorAll(".footertop div p").forEach(ele=>ele.style.color="#000000");
-
-        batch1.forEach(ele=>{ele.style.color = "#ffffff";});
-        batch2.forEach(ele=>{ele.style.color = "#a2a9ad";});
-        document.styleSheets[2].insertRule('.l3:before { border-left: 1px solid white !important; }', 0);
+        //light green back to dark green
+        document.querySelectorAll("body").forEach(ele=>{
+            if(ele.nodeType){
+                ele.style.background = "#0B6342";
+            }
+        })
+        //vice versa
+        document.querySelectorAll(".makitit,.hero p, div.caption h4,div.tag,.filter-container ul.filters li a.filter").forEach(ele=>{
+            if(ele.nodeType){
+                ele.style.color = "#5FE8B4";
+            }
+        })
+          //blacktowhite
+          document.querySelectorAll(".footertop p,.social-links li a").forEach(ele=>{
+            if(ele.nodeType){
+                ele.style.color = "#fff";
+            }
+        })
+        document.querySelectorAll("footer").forEach(ele=>{
+            if(ele.nodeType){
+                ele.style.background = "#323e38";
+            }
+        })
         document.querySelectorAll(".brand")[0].querySelectorAll("img")[0].src ="./images/logo.png";
         currentTheme = "dark";
         document.querySelectorAll(".themeop").forEach(e=>e.style.border = "none");

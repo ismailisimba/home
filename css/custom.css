@@ -18,7 +18,7 @@
 
 ----------------------------*/
 body{
-    background-color: #5FE8B4;
+    background: #5FE8B4;
 }
 .dropdown a{
     text-decoration: none !important;
@@ -33,11 +33,11 @@ body{
     width: 150%;
     left: -25%;
 }
-.title1 span, .hero p{
+.makitit, .hero p{
 transition:all .69s ease-out;
-color: #0B6342 !important;
+color: #0B6342;
 box-sizing: border-box;
-background-color: #5FE8B4;
+background-color: transparent;
 }
 .btn.btn-default, .btn.btn-color {
     background: #0B6342;
@@ -106,17 +106,30 @@ background-color: #5FE8B4;
     align-items: center !important;
 }
 
-.navia:active, .navia:hover{
-  color: white !important;
+.navia{
+    color: #29634D !important;
+    background-color: #5FE8B4 !important
+  }
+
+.navia:active{
   background-color: #19E396 !important;
+  color: #0B6342 !important;
   border-radius: 9px;
 }
-.navia:hover{
-    background-color: #14B376 !important;
+
+ul.navigation li a.active {
+    color: #29634D;
+    text-decoration:wavy;
+}
+.navia:hover,.btn.btn-default:hover{
+    background-color: #19E396 !important;
 }
 
 ul.navigation li a {
     padding: 12px 16px !important;
+}
+.navigation{
+    background-color: #5FE8B4;
 }
 .navmom{
     display: flex;
@@ -144,19 +157,26 @@ ul.navigation li a {
 
 }
 
+.l3::before,.l3::after,.l2::before,.l2::after,.l1::before,.l1::after
+{ border-left: none !important }
+
 .grid-container .col-md-12, footer, footer .col-md-3, footer .footertop,footer .container{
     z-index: 2 !important;
 }
 
+footer{
+    background: #f5f5f5;
+}
+
 .framesmom{
+    width: 168px;
     position: absolute;
-    width: 169px;
+    left: 172px;
     height: 99px;
     box-sizing: border-box;
-    background-color: #5FE8B4;
-    transform: rotate(320deg);
-    top: 30px;
-    left: 30px;
+    background-color: transparent;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 .frame:first-child{
     position: relative;
@@ -164,7 +184,7 @@ ul.navigation li a {
     top: 169px;
     width: 169px;
     height: 169px;
-    background-color: #5FE8B4;
+    background-color: transparent;
     z-index: 0;
     transition: all .34s ease-in;
     /* @keyframes duration | easing-function | delay |
@@ -241,7 +261,7 @@ a.naviatheme,.opt1,.opt2{
     width: 169px;
     height: 169px;
     color: #5FE8B4;
-    background-color: #5FE8B4;
+    background-color: transparent;
     z-index: 1;
 }
 .framesmom img{
@@ -260,7 +280,7 @@ a.naviatheme,.opt1,.opt2{
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color:#5FE8B4;
+    background-color:transparent;
     z-index: 1;
 }
 
@@ -273,8 +293,8 @@ a.naviatheme,.opt1,.opt2{
   @media screen and (max-width: 600px) {
 
     .framesmom{
-        top: -69px;
-        left: 0px;
+        top: -169px;
+        left: 42px;
     }
     .navmom{
         background-color: transparent;
@@ -328,5 +348,13 @@ a.naviatheme,.opt1,.opt2{
         flex-flow: column;
         justify-content: flex-end;
         align-items: center;
+    }
+
+    .nav-trigger .bar,ul.navigation.tapped {
+        background: #14B376;
+    }
+
+    ul.navigation.tapped::before{
+        border-color: transparent transparent #14B376 transparent;
     }
   }

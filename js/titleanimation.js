@@ -29,9 +29,11 @@ class titleanimation {
     doTitleAnimation (){
         const span = document.createElement("span");
         const span2 = document.createElement("span");
-
+        const currColor = window.getComputedStyle(document.querySelectorAll(".makitit")[0]).getPropertyValue("color");
         span.style.fontWeight = "300";
         span2.style.fontWeight = "500";
+        span.style.color = currColor;
+        span2.style.color = currColor;
        
         if(this.counter1==0&&this.counter2.num>=0){
             if(this.counter2.num>2){
