@@ -160,18 +160,82 @@ ul.navigation li a {
 .l3::before,.l3::after,.l2::before,.l2::after,.l1::before,.l1::after
 { border-left: none !important }
 
-.grid-container .col-md-12, footer, footer .col-md-3, footer .footertop,footer .container{
+.grid-container .col-md-12, footer .col-md-3, footer .footertop,footer .container{
     z-index: 2 !important;
 }
 
 footer{
     background: #f5f5f5;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.art {
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 55vh;
+    background-color: transparent;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.footertop p,.footertop ul{
+    height: 120px;
+    box-sizing: border-box;
+    opacity: .84;
+}
+
+.footertop p{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footertop ul{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.art h4,.art p {
+    background-color: #29634D;
+    color: white !important;
+    user-select: none;
+    padding: 3px 6px;
+    box-sizing: border-box;
+    opacity: .84;
+}
+
+.art p{
+    font-size: 11px !important;
+}
+
+.art a{
+    color: white !important;
+}
+
+.art a:hover{
+    color: #14B376;
 }
 
 .framesmom{
-    width: 168px;
+    width: 28%;
     position: absolute;
-    left: 172px;
+    left: 29%;
     height: 99px;
     box-sizing: border-box;
     background-color: transparent;
@@ -290,11 +354,15 @@ a.naviatheme,.opt1,.opt2{
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 992px) {
+    .navia{
+        background-color: transparent !important;
+        font-weight: 600;
+    }
 
     .framesmom{
         top: -169px;
-        left: 42px;
+        left: 28.5%;
     }
     .navmom{
         background-color: transparent;
@@ -356,5 +424,44 @@ a.naviatheme,.opt1,.opt2{
 
     ul.navigation.tapped::before{
         border-color: transparent transparent #14B376 transparent;
+    }
+    .art {
+        height: 100vh;
+    
+    }
+
+    .footertop p,.footertop ul{
+        width: 169px;
+        font-size: 12px !important;
+        padding: 6px 12px;
+        box-sizing: border-box;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+        margin: 0px;
+    }
+    
+
+    .footertop{
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .filter-container .inner ul.filters {
+        background-color: #0B6342;
+        opacity: .86;
+    }
+
+    a.naviatheme{
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .navoptions {
+        background-color: transparent;
+        border-left: none;
     }
   }
