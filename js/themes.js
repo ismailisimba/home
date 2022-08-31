@@ -7,6 +7,7 @@ const srcArr = [
     "./images/makicons/5.webp",
     "./images/makicons/6.webp",
 ];
+const img = {"disSrc":"","title":"","artist":""};
 
 var currentTheme = "dark";
 
@@ -265,6 +266,7 @@ const imgSrc =
         `artpicget`,
         server.artPicURL(randArtData.data.image_id),
         )
+img.disSrc = imgSrc;
 
 
 randArtData.data.title = (()=>{
@@ -276,6 +278,8 @@ randArtData.data.title = (()=>{
     return randArtData.data.title;
 })();
 
+img.title = randArtData.data.title;
+
 randArtData.data.artist_title = (()=>{
     if(randArtData.data.artist_title===null||randArtData.data.artist_title==="null"||randArtData.data.artist_title===undefined||randArtData.data.artist_title==="undefined")
      {randArtData.data.artist_title="Unknown";
@@ -284,15 +288,12 @@ randArtData.data.artist_title = (()=>{
      }
      return randArtData.data.artist_title;
  })();
+ img.artist = randArtData.data.artist_title;
 
 artCanvas.style.backgroundImage = `url(${imgSrc})`;
 artCanvas.querySelectorAll("h4")[0].querySelectorAll("span")[0].innerHTML = `${randArtData.data.title}`;
 artCanvas.querySelectorAll("h4")[0].querySelectorAll("span")[1].innerHTML = `${randArtData.data.artist_title}`;
-artCanvas.querySelectorAll("a")[0].addEventListener("click",(e)=>{
-    e.preventDefault();
-     e.stopPropagation();
-     fullImgTab(imgSrc,randArtData.data.title,randArtData.data.artist_title);
-   })
+artCanvas.querySelectorAll("a")[0].addEventListener("click",imageShower)
 }
 
 const sideFilterClicksMob = ()=>{
@@ -365,3 +366,11 @@ function fullImgTab(imgsrc,artist,title) {
     console.log(leftVal);
     document.querySelectorAll(".frame")[0].style.left = leftVal+"px";
   }
+
+
+  const imageShower = (e)=>{
+    e.target.removeEventListener("click",imageShower);
+    e.preventDefault();
+     e.stopPropagation();
+     fullImgTab(img.disSrc,img.title,img.artist);
+   }
