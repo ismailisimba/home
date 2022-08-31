@@ -18,6 +18,6 @@ const string1 = window.location.hostname.includes("ismailisimba.github.io") ? "/
     themes.getArt(server);
     window.setInterval(()=>{
       themes.getArt(server);
-    },9624)
+    },14692)
   });
 

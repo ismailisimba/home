@@ -31,7 +31,7 @@ class themes {
         this.currentTheme = "light";
         this.applyThisTheme("light");
      }
-
+     positionMakiCons();
      this.applyMakIcons();
      this.sideFilterClicksMob();
         
@@ -251,7 +251,14 @@ const randArtData = JSON.parse(
         server.artDataURL,
         )
 )
-const artCanvas = document.querySelectorAll(".art")[0]
+const artCanvas = document.querySelectorAll(".art")[0];
+const heightsToMatch = [
+    {"height":window.getComputedStyle(document.querySelectorAll("footer")[0]).getPropertyValue("height")},
+    {"height":window.getComputedStyle(document.querySelectorAll("footer")[1]).getPropertyValue("height")}]
+heightsToMatch.forEach(h=>{
+    h.height = parseInt(h.height.slice(0,h.height.length-2),10);
+})
+artCanvas.style.height = `${(heightsToMatch[0].height+heightsToMatch[1].height)}px`;
 const imgSrc = 
     await server.startFetch(
         JSON.stringify({"no":"data"}),
@@ -259,9 +266,33 @@ const imgSrc =
         server.artPicURL(randArtData.data.image_id),
         )
 
+
+randArtData.data.title = (()=>{
+   if(randArtData.data.title===null||randArtData.data.title==="null"||randArtData.data.title===undefined||randArtData.data.title==="undefined")
+    {randArtData.data.title="Unknown";
+    }else{
+        randArtData.data.title =randArtData.data.title;
+    }
+    return randArtData.data.title;
+})();
+
+randArtData.data.artist_title = (()=>{
+    if(randArtData.data.artist_title===null||randArtData.data.artist_title==="null"||randArtData.data.artist_title===undefined||randArtData.data.artist_title==="undefined")
+     {randArtData.data.artist_title="Unknown";
+     }else{
+         randArtData.data.artist_title =randArtData.data.artist_title;
+     }
+     return randArtData.data.artist_title;
+ })();
+
 artCanvas.style.backgroundImage = `url(${imgSrc})`;
-artCanvas.querySelectorAll("h4")[0].querySelectorAll("span")[0].innerHTML = `${randArtData.data.title}`
-artCanvas.querySelectorAll("h4")[0].querySelectorAll("span")[1].innerHTML = `${randArtData.data.artist_title}`
+artCanvas.querySelectorAll("h4")[0].querySelectorAll("span")[0].innerHTML = `${randArtData.data.title}`;
+artCanvas.querySelectorAll("h4")[0].querySelectorAll("span")[1].innerHTML = `${randArtData.data.artist_title}`;
+artCanvas.querySelectorAll("a")[0].addEventListener("click",(e)=>{
+    e.preventDefault();
+     e.stopPropagation();
+     fullImgTab(imgSrc,randArtData.data.title,randArtData.data.artist_title);
+   })
 }
 
 const sideFilterClicksMob = ()=>{
@@ -274,3 +305,63 @@ const sideFilterClicksMob = ()=>{
         })
     } 
 }
+
+function fullImgTab(imgsrc,artist,title) {
+    var newTab = window.open();
+    const someVals = (()=>{
+        const valarr = []
+        if(true){
+            valarr.push({"left":"0px"});
+            valarr.push({"width":"100%"});
+        }
+        return valarr;
+    })();
+    console.log(someVals);
+    newTab.document.body.innerHTML = `
+    <img
+    style="
+    display:block;
+    position:relative;
+    margin:0 auto;
+    " 
+    src="${imgsrc}" width="100%" height="auto" style="display:block; margin:0 auto;">
+
+    <p class="popuppart"style="
+    position: absolute;
+    margin:0 auto;
+    font-family: 'Merriweather';
+    background-color:#0B6342;
+    color:white !important;
+    padding:6px 9px;
+    top:69vh;
+    left:${someVals[0].left};
+    width:${someVals[1].width};
+    box-sizing:border-box;
+    height:69px;
+    display:flex;
+    flex-flow:column;
+    justify-content:center;
+    align-items:center;">
+    <span>${artist}</span>
+    <span>by</span>
+    <span>${title}</span>
+    <p>
+    `;
+  
+    return "ifrm.location.href";
+  }
+
+
+  function positionMakiCons(){
+    const momwidth = window.getComputedStyle(document.querySelectorAll(".framesmom")[0]).getPropertyValue("width");
+    const childwidth = window.getComputedStyle(document.querySelectorAll(".frame")[0]).getPropertyValue("width");
+    const vals = [{"w":momwidth},{"w":childwidth}];
+    console.log(vals);
+    vals.forEach(val=>{
+        val.w = val.w.slice(0,val.w.length-2);
+        val.w = parseInt(val.w,10);
+    })
+    const leftVal = (vals[0].w-vals[1].w)/2;
+    console.log(leftVal);
+    document.querySelectorAll(".frame")[0].style.left = leftVal+"px";
+  }
