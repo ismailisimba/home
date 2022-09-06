@@ -74,7 +74,10 @@ const string1 = (()=>{
   gtag('js', new Date());
 
   gtag('config', 'G-ENZL0PWCH0');
-  document.head.appendChild(`<meta name="google-site-verification" content="wSzcNyp9exETjj0c3TU0wf4ZueB6G4HNiUdM7Rqs7r8" />`)
+  const meta = document.createElement("meta");
+  meta.name = `google-site-verification`;
+  meta.content = `wSzcNyp9exETjj0c3TU0wf4ZueB6G4HNiUdM7Rqs7r8`;
+  document.head.appendChild(meta);
   });
 
 
